@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:phoneauth_firebase/provider/auth_provider.dart';
-import 'package:phoneauth_firebase/screens/home_screen.dart';
-import 'package:phoneauth_firebase/screens/user_information_screen.dart';
-import 'package:phoneauth_firebase/utils/utils.dart';
-import 'package:phoneauth_firebase/widgets/custom_button.dart';
+import 'package:otp1/provider/auth_provider.dart';
+import 'package:otp1/screens/home_screen.dart';
+import 'package:otp1/screens/user_information_screen.dart';
+import 'package:otp1/utils/utils.dart';
+import 'package:otp1/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 

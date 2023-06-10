@@ -1,6 +1,6 @@
 {
-    "name": "phoneauth_firebase",
-    "short_name": "phoneauth_firebase",
+    "name": "otp1",
+    "short_name": "otp1",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

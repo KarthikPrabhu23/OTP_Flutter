@@ -5,9 +5,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:phoneauth_firebase/model/user_model.dart';
-import 'package:phoneauth_firebase/screens/otp_screen.dart';
-import 'package:phoneauth_firebase/utils/utils.dart';
+import 'package:otp1/model/user_model.dart';
+import 'package:otp1/screens/otp_screen.dart';
+import 'package:otp1/utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthProvider extends ChangeNotifier {
