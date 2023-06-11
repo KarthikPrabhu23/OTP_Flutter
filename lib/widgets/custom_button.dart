@@ -12,14 +12,20 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
+        backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 46, 59, 98)),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.0),
+          const RoundedRectangleBorder(
+            // borderRadius: BorderRadius.circular(25.0),
           ),
         ),
       ),
-      child: Text(text, style: const TextStyle(fontSize: 16)),
+      child: Text(text,
+          style: const TextStyle(
+            fontFamily: 'Montserrat',
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w700,
+            fontSize: 16.0,
+          )),
     );
   }
 }

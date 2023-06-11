@@ -54,7 +54,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 18),
+                const Text(
+                  "You’ll receive a 4 digit code to verify next.",
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14.0,
+                    letterSpacing: 0.0703846,
+                    color: Color.fromARGB(255, 106, 108, 123),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 30),
                 TextFormField(
                   cursorColor: Colors.purple,
                   controller: phoneController,
@@ -81,16 +94,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       fontWeight: FontWeight.w400,
                       fontSize: 16.0,
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.black12,
+                    enabledBorder: const OutlineInputBorder(
+                      // borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.black,
                         // width: 327.0
                       ),
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.black12),
+                    focusedBorder: const OutlineInputBorder(
+                      // borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.black),
                     ),
                     prefixIcon: Container(
                       padding: const EdgeInsets.all(12.0),
@@ -107,11 +120,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 });
                               });
                         },
-                        
                         child: Text(
                           "${selectedCountry.flagEmoji}   + ${selectedCountry.phoneCode}  -",
                           style: const TextStyle(
-                            
                             fontSize: 18,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -137,13 +148,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         : null,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 29),
                 SizedBox(
                   width: double.infinity,
                   height: 50,
                   child: CustomButton(
-                      text: "Login", onPressed: () => sendPhoneNumber()),
+                      text: "CONTINUE", onPressed: () => sendPhoneNumber()),
                 ),
+
+                // Animation
+                // Container(
+                // //   width: double.infinity,
+                //   decoration: const BoxDecoration(
+                //     image: DecorationImage(
+                //         image: AssetImage('assets/splash1.png')),
+                //         // fit: BoxFit.cover,
+                        
+                //   ),
+                  //   child:
+                  //     Align(
+                  //       // vectorXZ5 (8:370)
+                  //       alignment:  Alignment.bottomCenter,
+                  //       child:
+                  //       SizedBox(
+                  //         width: 360,
+                  //         height:  200,
+                  //         child:
+                  //       // image: AssetImage('assets/splash1.png')
+                  //         // width:  360,
+                  //         // height:  200,
+                  //       ),
+                  //     ),
+
+                  // )
+                // ),
+
+
+                // ANIMATION ENDS
               ],
             ),
           ),
