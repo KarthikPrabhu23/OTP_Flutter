@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "246994578596-q581pnrgkqdnnptbu633ph2ftl4vtapi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.otp1",
+            "certificate_hash": "c7e21f900f0024a791f92b7f9d521a9eb4804e2e"
+          }
+        },
+        {
           "client_id": "246994578596-1nolbegul7l3qr7iumqa6qvi58r74a4u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "246994578596-1nolbegul7l3qr7iumqa6qvi58r74a4u.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "246994578596-l3qqh6g1mdsrlub96ro5vahekprai64a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.phoneauthFirebase"
+              }
             }
           ]
         }
