@@ -6,6 +6,9 @@ import 'package:otp1/utils/utils.dart';
 import 'package:otp1/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+import 'package:country_picker/country_picker.dart';
+
+import 'package:otp1/screens/register_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   final String verificationId;
@@ -43,29 +46,21 @@ class _OtpScreenState extends State<OtpScreen> {
                           child: const Icon(Icons.arrow_back),
                         ),
                       ),
-                      Container(
-                        width: 200,
-                        height: 200,
-                        padding: const EdgeInsets.all(20.0),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.purple.shade50,
-                        ),
-                        child: Image.asset(
-                          "assets/image2.png",
-                        ),
-                      ),
-                      const SizedBox(height: 20),
+                      
+                      const SizedBox(height: 30),
                       const Text(
-                        "Verification",
+                        "Verify Phone",
                         style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20.0,
+                          letterSpacing: 0.0703846,
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 15),
                       const Text(
-                        "Enter the OTP send to your phone number",
+                        "Code is sent to the mobile number",
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.black38,
@@ -79,16 +74,14 @@ class _OtpScreenState extends State<OtpScreen> {
                         showCursor: true,
                         // EXTRA ADD BELOW
                         keyboardType: TextInputType.number,
-                        defaultPinTheme: PinTheme(
-                          width: 60,
-                          height: 60,
+                        defaultPinTheme: const PinTheme(
+                          width: 48,
+                          height: 48,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: Colors.purple.shade200,
-                            ),
+                            // borderRadius: BorderRadius.circular(10),
+                            color: Color.fromARGB(255, 147, 209, 243),
                           ),
-                          textStyle: const TextStyle(
+                          textStyle: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
@@ -100,6 +93,31 @@ class _OtpScreenState extends State<OtpScreen> {
                         },
                       ),
                       const SizedBox(height: 25),
+
+                      const Text(
+                        "Didn't receive the code?",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.0,
+                          letterSpacing: 0.0703846,
+                          color: Color.fromARGB(255, 106, 108, 123)
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        "Request again",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.0,
+                          letterSpacing: 0.0703846,
+                        ),
+                      ),
+
+                      const SizedBox(height: 20),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
                         height: 50,
@@ -112,24 +130,6 @@ class _OtpScreenState extends State<OtpScreen> {
                               showSnackBar(context, "Enter 6-Digit code");
                             }
                           },
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      const Text(
-                        "Didn't receive any code?",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black38,
-                        ),
-                      ),
-                      const SizedBox(height: 15),
-                      const Text(
-                        "Resend New Code",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.purple,
                         ),
                       ),
                     ],

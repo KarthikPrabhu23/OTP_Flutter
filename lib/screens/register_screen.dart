@@ -42,6 +42,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
             child: Column(
               children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: const Icon(Icons.close),
+                  ),
+                ),
                 const SizedBox(height: 112),
                 const Text(
                   "Please enter your mobile number",
@@ -163,26 +170,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 //     image: DecorationImage(
                 //         image: AssetImage('assets/splash1.png')),
                 //         // fit: BoxFit.cover,
-                        
+
                 //   ),
-                  //   child:
-                  //     Align(
-                  //       // vectorXZ5 (8:370)
-                  //       alignment:  Alignment.bottomCenter,
-                  //       child:
-                  //       SizedBox(
-                  //         width: 360,
-                  //         height:  200,
-                  //         child:
-                  //       // image: AssetImage('assets/splash1.png')
-                  //         // width:  360,
-                  //         // height:  200,
-                  //       ),
-                  //     ),
+                //   child:
+                //     Align(
+                //       // vectorXZ5 (8:370)
+                //       alignment:  Alignment.bottomCenter,
+                //       child:
+                //       SizedBox(
+                //         width: 360,
+                //         height:  200,
+                //         child:
+                //       // image: AssetImage('assets/splash1.png')
+                //         // width:  360,
+                //         // height:  200,
+                //       ),
+                //     ),
 
-                  // )
+                // )
                 // ),
-
 
                 // ANIMATION ENDS
               ],
