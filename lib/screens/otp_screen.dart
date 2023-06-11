@@ -6,9 +6,6 @@ import 'package:otp1/utils/utils.dart';
 import 'package:otp1/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
-import 'package:country_picker/country_picker.dart';
-
-import 'package:otp1/screens/register_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   final String verificationId;
@@ -46,8 +43,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           child: const Icon(Icons.arrow_back),
                         ),
                       ),
-                      
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 50),
                       const Text(
                         "Verify Phone",
                         style: TextStyle(
@@ -62,9 +58,13 @@ class _OtpScreenState extends State<OtpScreen> {
                       const Text(
                         "Code is sent to the mobile number",
                         style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black38,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.0,
+                          color: Color.fromARGB(255, 106, 108, 123),
+                          letterSpacing: 0.0703846,
+                          
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -93,17 +93,15 @@ class _OtpScreenState extends State<OtpScreen> {
                         },
                       ),
                       const SizedBox(height: 25),
-
                       const Text(
                         "Didn't receive the code?",
                         style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14.0,
-                          letterSpacing: 0.0703846,
-                          color: Color.fromARGB(255, 106, 108, 123)
-                        ),
+                            fontFamily: 'Roboto',
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.0,
+                            letterSpacing: 0.0703846,
+                            color: Color.fromARGB(255, 106, 108, 123)),
                       ),
                       const SizedBox(height: 10),
                       const Text(
@@ -116,7 +114,6 @@ class _OtpScreenState extends State<OtpScreen> {
                           letterSpacing: 0.0703846,
                         ),
                       ),
-
                       const SizedBox(height: 20),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,

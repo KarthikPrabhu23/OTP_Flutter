@@ -45,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: GestureDetector(
-                    onTap: () => Navigator.of(context).pop(),
+                    // onTap: () => Navigator.of(context).pop(),
                     child: const Icon(Icons.close),
                   ),
                 ),
