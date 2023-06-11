@@ -1,5 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:otp1/provider/auth_provider.dart';
 import 'package:otp1/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
@@ -41,33 +42,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
             padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
             child: Column(
               children: [
-                Container(
-                  width: 200,
-                  height: 200,
-                  padding: const EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.purple.shade50,
-                  ),
-                  child: Image.asset(
-                    "assets/image2.png",
-                  ),
-                ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 112),
                 const Text(
-                  "Register",
+                  "Please enter your mobile number",
                   style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Add your phone number. We'll send you a verification code",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black38,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto',
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20.0,
+                    letterSpacing: 0.0703846,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -76,7 +59,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   cursorColor: Colors.purple,
                   controller: phoneController,
                   style: const TextStyle(
+                    // fontWeight: FontWeight.bold,
+                    // fontFamily: 'Montserrat',
+                    // fontStyle: FontStyle.normal,
+                    // fontSize: 16.0,
+
                     fontSize: 18,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                   onChanged: (value) {
@@ -85,22 +74,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     });
                   },
                   decoration: InputDecoration(
-                    hintText: "Enter phone number",
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15,
-                      color: Colors.grey.shade600,
+                    hintText: "Mobile Number",
+                    hintStyle: const TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16.0,
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.black12),
+                      borderSide: const BorderSide(
+                        color: Colors.black12,
+                        // width: 327.0
+                      ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: const BorderSide(color: Colors.black12),
                     ),
                     prefixIcon: Container(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: InkWell(
                         onTap: () {
                           showCountryPicker(
@@ -114,9 +107,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 });
                               });
                         },
+                        
                         child: Text(
-                          "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
+                          "${selectedCountry.flagEmoji}   + ${selectedCountry.phoneCode}  -",
                           style: const TextStyle(
+                            
                             fontSize: 18,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
