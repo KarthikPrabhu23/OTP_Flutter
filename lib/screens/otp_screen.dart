@@ -77,6 +77,8 @@ class _OtpScreenState extends State<OtpScreen> {
                       Pinput(
                         length: 6,
                         showCursor: true,
+                        // EXTRA ADD BELOW
+                        keyboardType: TextInputType.number,
                         defaultPinTheme: PinTheme(
                           width: 60,
                           height: 60,

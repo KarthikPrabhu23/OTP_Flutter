@@ -42,7 +42,8 @@ dependencies:
 #  firebase_storage: ^11.0.6
   shared_preferences: ^2.1.2
   provider: ^6.0.4
-  pinput: ^2.2.16
+  # 2.2.16
+  pinput: ^2.2.31
   image_picker: ^0.8.6
   firebase_core: ^2.13.1
   firebaseapis: ^0.1.2
