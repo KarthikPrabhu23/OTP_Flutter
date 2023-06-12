@@ -21,7 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25),
+            padding: const EdgeInsets.symmetric(vertical: 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -95,9 +95,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 277.8),
+                  padding: const EdgeInsets.only(top: 342),
                   child:  Image.asset(
-                      "assets/background.png",
+                      "assets/splash2.png",
                     ),
                   ),
                 

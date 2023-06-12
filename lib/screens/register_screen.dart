@@ -14,7 +14,6 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController phoneController = TextEditingController();
-
   Country selectedCountry = Country(
     phoneCode: "91",
     countryCode: "IN",
@@ -28,6 +27,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     e164Key: "",
   );
 
+  void sendPhoneNumber() {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    String phoneNumber = phoneController.text.trim();
+    ap.signInWithPhone(context, "+${selectedCountry.phoneCode}$phoneNumber");
+  }
+
   @override
   Widget build(BuildContext context) {
     phoneController.selection = TextSelection.fromPosition(
@@ -39,14 +44,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
+            padding: const EdgeInsets.only(top: 20),
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                    // onTap: () => Navigator.of(context).pop(),
-                    child: const Icon(Icons.close),
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: GestureDetector(
+                      // onTap: () => Navigator.of(context).pop(),
+
+                      child: const Icon(Icons.close),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 112),
@@ -75,136 +84,111 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 30),
-                TextFormField(
-                  cursorColor: Colors.purple,
-                  // ADD BELOW
+                const Padding(padding: EdgeInsets.only(left: 20, right: 20)),
+                SizedBox(
+                  width: 327,
+                  height: 48,
+                  child: TextFormField(
+                    cursorColor: Colors.purple,
+                    // ADD BELOW
                     keyboardType: TextInputType.number,
-                  controller: phoneController,
-                  style: const TextStyle(
-                    // fontWeight: FontWeight.bold,
-                    // fontFamily: 'Montserrat',
-                    // fontStyle: FontStyle.normal,
-                    // fontSize: 16.0,
+                    controller: phoneController,
+                    style: const TextStyle(
+                      // fontWeight: FontWeight.bold,
+                      // fontFamily: 'Montserrat',
+                      // fontStyle: FontStyle.normal,
+                      // fontSize: 16.0,
 
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onChanged: (value) {
-                    
-                    setState(() {
-                      phoneController.text = value;
-                    });
-                  },
-                  decoration: InputDecoration(
-                    hintText: "Mobile Number",
-                    hintStyle: const TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16.0,
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      // borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                        // width: 327.0
+                    onChanged: (value) {
+                      setState(() {
+                        phoneController.text = value;
+                      });
+                    },
+                    decoration: InputDecoration(
+                      hintText: "Mobile Number",
+                      hintStyle: const TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.0,
                       ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      // borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                    prefixIcon: Container(
-                      padding: const EdgeInsets.all(12.0),
-                      child: InkWell(
-                        onTap: () {
-                          showCountryPicker(
-                              context: context,
-                              countryListTheme: const CountryListThemeData(
-                                bottomSheetHeight: 550,
-                              ),
-                              onSelect: (value) {
-                                setState(() {
-                                  selectedCountry = value;
+                      enabledBorder: const OutlineInputBorder(
+                        // borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                          // width: 327.0
+                        ),
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                        // borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black),
+                      ),
+                      prefixIcon: Container(
+                        padding: const EdgeInsets.all(12.0),
+                        child: InkWell(
+                          onTap: () {
+                            showCountryPicker(
+                                context: context,
+                                countryListTheme: const CountryListThemeData(
+                                  bottomSheetHeight: 550,
+                                ),
+                                onSelect: (value) {
+                                  setState(() {
+                                    selectedCountry = value;
+                                  });
                                 });
-                              });
-                        },
-                        child: Text(
-                          "${selectedCountry.flagEmoji}   + ${selectedCountry.phoneCode}  -",
-                          style: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                          },
+                          child: Text(
+                            "${selectedCountry.flagEmoji}   + ${selectedCountry.phoneCode}  -",
+                            style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
+                      suffixIcon: phoneController.text.length > 9
+                          ? Container(
+                              height: 30,
+                              width: 30,
+                              margin: const EdgeInsets.all(10.0),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.green,
+                              ),
+                              child: const Icon(
+                                Icons.done,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                            )
+                          : null,
                     ),
-                    suffixIcon: phoneController.text.length > 9
-                        ? Container(
-                            height: 30,
-                            width: 30,
-                            margin: const EdgeInsets.all(10.0),
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.green,
-                            ),
-                            child: const Icon(
-                              Icons.done,
-                              color: Colors.white,
-                              size: 20,
-                            ),
-                          )
-                        : null,
                   ),
                 ),
                 const SizedBox(height: 29),
                 SizedBox(
-                  width: double.infinity,
-                  height: 50,
+                  width: 328,
+                  height: 56,
                   child: CustomButton(
                       text: "CONTINUE", onPressed: () => sendPhoneNumber()),
                 ),
-
-                // Animation
-                // Container(
-                // //   width: double.infinity,
-                //   decoration: const BoxDecoration(
-                //     image: DecorationImage(
-                //         image: AssetImage('assets/splash1.png')),
-                //         // fit: BoxFit.cover,
-
-                //   ),
-                //   child:
-                //     Align(
-                //       // vectorXZ5 (8:370)
-                //       alignment:  Alignment.bottomCenter,
-                //       child:
-                //       SizedBox(
-                //         width: 360,
-                //         height:  200,
-                //         child:
-                //       // image: AssetImage('assets/splash1.png')
-                //         // width:  360,
-                //         // height:  200,
-                //       ),
-                //     ),
-
-                // )
-                // ),
-
-                // ANIMATION ENDS
+                Padding(
+                  padding: const EdgeInsets.only(top: 282.2),
+                  child: Image.asset(
+                    "assets/splash3.png",
+                  ),
+                ),
               ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  void sendPhoneNumber() {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
-    String phoneNumber = phoneController.text.trim();
-    ap.signInWithPhone(context, "+${selectedCountry.phoneCode}$phoneNumber");
   }
 }
