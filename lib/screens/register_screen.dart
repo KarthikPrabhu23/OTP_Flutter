@@ -77,6 +77,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 30),
                 TextFormField(
                   cursorColor: Colors.purple,
+                  // ADD BELOW
+                    keyboardType: TextInputType.number,
                   controller: phoneController,
                   style: const TextStyle(
                     // fontWeight: FontWeight.bold,
@@ -89,6 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                   onChanged: (value) {
+                    
                     setState(() {
                       phoneController.text = value;
                     });
