@@ -94,13 +94,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     text: "NEXT",
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 342),
-                  child:  Image.asset(
-                      "assets/splash2.png",
-                    ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 342),
+                //   child: Image.asset(
+                //     "assets/splash2.png",
+                //   ),
+                // ),
+
+                // Image.asset(
+                //   "assets/splash2.png",
+                //   alignment: Alignment.bottomCenter,
+                // ),
+                Expanded(
+                  flex: 1,
+                  child: Image.asset(
+                    "assets/splash2.png",
+                    alignment: Alignment.bottomCenter,
                   ),
-                
+                ),
               ],
             ),
           ),

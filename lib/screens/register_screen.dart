@@ -48,7 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 20),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: GestureDetector(
@@ -178,10 +178,40 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: CustomButton(
                       text: "CONTINUE", onPressed: () => sendPhoneNumber()),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 282.2),
+                // Padding(
+
+                //   padding: const EdgeInsets.only(top: 282.2),
+
+                //   child: Image.asset(
+                //     "assets/splash3.png",
+
+                //   ),
+                // ),
+
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     Image.asset(
+                //       "assets/splash3.png",
+                //     ),
+                //   ],
+                // ),
+
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: Expanded(
+                //     flex: 1,
+                //     child: Image.asset(
+                //       "assets/splash3.png",
+                //     ),
+                //   ),
+                // ),
+                Expanded(
+                  
+                  flex: 1,
                   child: Image.asset(
                     "assets/splash3.png",
+                    alignment: Alignment.bottomCenter,
                   ),
                 ),
               ],
