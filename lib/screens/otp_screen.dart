@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:otp1/provider/auth_provider.dart';
 import 'package:otp1/screens/home_screen.dart';
-import 'package:otp1/screens/user_information_screen.dart';
+// import 'package:otp1/screens/user_information_screen.dart';
 import 'package:otp1/utils/utils.dart';
 import 'package:otp1/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+
+import 'option_page.dart';
 
 class OtpScreen extends StatefulWidget {
   final String verificationId;
@@ -166,9 +168,14 @@ class _OtpScreenState extends State<OtpScreen> {
               // new user
               Navigator.pushAndRemoveUntil(
                   context,
+
                   MaterialPageRoute(
-                      builder: (context) => const UserInfromationScreen()),
-                  (route) => false);
+                            builder: (context) => const  OptionPage()
+                          ),(route) => false);
+
+                  // MaterialPageRoute(
+                  //     builder: (context) => const UserInfromationScreen()),
+                  // (route) => false);
             }
           },
         );
