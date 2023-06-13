@@ -17,8 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: const Text("FlutterPhone Auth"),
+        backgroundColor: const Color.fromARGB(255, 79, 59, 194),
+        title: const Text("OTP Auth FLUTTER"),
         actions: [
           IconButton(
             onPressed: () {
@@ -37,18 +37,22 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SizedBox(height: 90),
           CircleAvatar(
-            backgroundColor: Colors.purple,
+            backgroundColor: const Color.fromARGB(255, 60, 47, 177),
             backgroundImage: NetworkImage(ap.userModel.profilePic),
-            radius: 50,
+            radius: 70,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 50),
           Text(ap.userModel.name),
+          const SizedBox(height: 10),
           Text(ap.userModel.phoneNumber),
+          const SizedBox(height: 10),
           Text(ap.userModel.email),
+          const SizedBox(height: 10),
           Text(ap.userModel.bio),
         ],
       )),
