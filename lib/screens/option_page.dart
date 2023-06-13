@@ -12,48 +12,52 @@ import 'package:flutter/material.dart';
 // }
 
 class OptionPage extends StatefulWidget {
-  const OptionPage ({super.key});
+  const OptionPage({super.key});
 
   @override
-  State<OptionPage > createState() => _OptionPageState();
+  State<OptionPage> createState() => _OptionPageState();
 }
 
-class _OptionPageState extends State<OptionPage > {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
+// class _OptionPageState extends State<OptionPage > {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Placeholder();
+//   }
+// }
 
 // ignore: camel_case_types
-class OptionPageState extends State<OptionPage> {
+class _OptionPageState extends State<OptionPage> {
   String _selected = 'first';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+      // ),
       body: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 60,
+                height: 150,
               ),
-              Container(
-                child: const Text(
-                  "Please select your profile",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              const Text(
+                "Please select your profile",
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20.0,
+                  letterSpacing: 0.0703846,
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
               Container(
-                width: 380,
-                height: 90,
+                width: 328.0,
+                height: 89.0,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black),
                 ),
@@ -69,41 +73,51 @@ class OptionPageState extends State<OptionPage> {
                   ),
                   title: Row(
                     children: [
-                      Container(
-                        child: Image.asset(
-                          "img/house.png",
-                          width: 50,
-                          height: 80,
-                        ),
+                      Image.asset(
+                        "assets/warehouse.png",
+                        width: 50,
+                        height: 80,
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
+                          SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            child: const Text(
-                              "Shipper",
-                              style: TextStyle(fontSize: 16),
+                          Text(
+                            "Shipper",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0703846,
                             ),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            child: const Text(
-                              "Lorem ipsum dolor sit amet,",
-                              style: TextStyle(fontSize: 14),
+                          Text(
+                            "Lorem ipsum dolor sit amet,",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.0,
+                              letterSpacing: 0.0703846,
                             ),
                           ),
-                          Container(
-                            child: const Text(
-                              "Condectetur adipiscing",
-                              style: TextStyle(fontSize: 14),
+                          Text(
+                            "Condectetur adipiscing",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.0,
+                              letterSpacing: 0.0703846,
                             ),
                           ),
                         ],
@@ -113,11 +127,11 @@ class OptionPageState extends State<OptionPage> {
                 ),
               ),
               const SizedBox(
-                height: 60,
+                height: 35,
               ),
               Container(
-                width: 380,
-                height: 90,
+                width: 328.0,
+                height: 89.0,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black),
                 ),
@@ -132,40 +146,54 @@ class OptionPageState extends State<OptionPage> {
                     },
                   ),
                   title: Row(
+                    
+                        mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        child: Image.asset(
-                          "img/bus.png",
-                          width: 50,
-                          height: 80,
-                        ),
+                      Image.asset(
+                        "assets/truck.png",
+                        width: 50,
+                        height: 80,
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
+                          SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            child: const Text(
-                              "Shipper",
-                              style: TextStyle(fontSize: 16),
+                          Text(
+                            "Transporter",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0703846,
                             ),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 10,
                           ),
-                          const Text(
+                          Text(
                             "Lorem ipsum dolor sit amet,",
-                            style: TextStyle(fontSize: 14),
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.0,
+                              letterSpacing: 0.0703846,
+                            ),
                           ),
-                          Container(
-                            child: const Text(
-                              "Condectetur adipiscing",
-                              style: TextStyle(fontSize: 14),
+                          Text(
+                            "Condectetur adipiscing",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.0,
+                              letterSpacing: 0.0703846,
                             ),
                           ),
                         ],
@@ -177,14 +205,24 @@ class OptionPageState extends State<OptionPage> {
               const SizedBox(
                 height: 30,
               ),
-              Container(
+              SizedBox(
                 width: 390,
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text("CONTINUE"),
                   style: ElevatedButton.styleFrom(
-                    primary: const Color(0xFF035AA6),
+                    
+                    backgroundColor: const Color.fromARGB(255, 46, 59, 98),
+                  ),
+                  child: const Text(
+                    "CONTINUE",
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16.0,
+                      letterSpacing: 2,
+                    ),
                   ),
                 ),
               ),
